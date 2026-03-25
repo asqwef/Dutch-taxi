@@ -1,0 +1,1 @@
+const destination = localStorage.getItem('destination')

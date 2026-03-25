@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>더치택시</title>
     <meta charset="utf-8">
     <style>
+    .primary {
+        background-color:dodgerblue;
+        color: white;   
+    }     
+    
     body{
         display: flex;
         flex-direction: column;
@@ -31,7 +37,6 @@
     </style>
 </head>
 <body>
-
     <div class="center">
         <h1>
         <a href="index.html">
@@ -43,18 +48,18 @@
     </div>
     <div class="main">
         <img src="taxi.jpg" width = "20%" alt="더치택시 로고">
-        <p>
-            <span class destination>
-                <box>
-                    <a href="start.html">
-                        목적지 입력
-                    </a>
-                </box> 
-            </span>
-        </p>
         </div>
 
     </div>
+    <div class="search-container">
+        <input type="text" id="addressInput" placeholder="주소를 검색하세요" onclick="openAddressSearch()" >
+        
+        <button class="button primary" onclick="getCurrentLocation()">
 
+                <span>매칭 시작</span>
+
+        </button>
+    </div>
+    <script src="./dist/address.js"></script>
 </body>
 </html>
