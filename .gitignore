@@ -1,0 +1,12 @@
+#비밀 키
+.env
+
+#라이브러리 폴더
+node_modules/
+
+#빌드 결과물
+dist/
+.DS_Store
+
+#로그 파일
+*.log

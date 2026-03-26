@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=78a8c05173647760fe3a89d9ad67520d&libraries=services&"></script>
     <title>더치택시</title>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -26,13 +27,16 @@
         text-align: center;
 
     }
-    .main {
+    .map {
         text-align: center;
         position: relative;
+        width: 500px;
+        height: 400px;
     }
     .destination {
         box-sizing: 10px;
     }
+    
 
     </style>
 </head>
@@ -44,12 +48,20 @@
         </a>
         </h1>
     <hr>
-
+    <script src="./dist/location.js"></script>
     </div>
-    <div class="main">
-        <img src="taxi.jpg" width = "20%" alt="더치택시 로고">
-        </div>
-
+    <div id="map" style="margin: 0 auto; width:100%; height:400px;">
+    <!--   <img src="taxi.jpg" width = "20%" alt="더치택시 로고">  --> 
+    <script>
+        kakao.maps.load(function() {
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+            var map = new kakao.maps.Map(container, options);
+        });
+    </script>
     </div>
     <div class="search-container">
         <input type="text" id="addressInput" placeholder="주소를 검색하세요" onclick="openAddressSearch()" >
@@ -61,5 +73,6 @@
         </button>
     </div>
     <script src="./dist/address.js"></script>
+
 </body>
 </html>
